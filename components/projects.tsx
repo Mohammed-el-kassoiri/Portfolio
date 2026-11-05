@@ -314,8 +314,8 @@ export function Projects() {
 
   const noResultsMsg =
     language === "en"
-      ? "No projects found matching your search."
-      : "Aucun projet correspondant à votre recherche."
+      ? "No projects found matching your filter."
+      : "Aucun projet correspondant à votre filtre."
   const labels =
     language === "en"
       ? {

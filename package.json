@@ -62,6 +62,8 @@
     "react-dom": "19.2.0",
     "react-hook-form": "latest",
     "react-intersection-observer": "latest",
+    "react-native": "^0.82.0",
+    "react-native-web": "^0.21.2",
     "react-resizable-panels": "latest",
     "react-type-animation": "latest",
     "recharts": "latest",
