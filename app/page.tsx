@@ -27,7 +27,7 @@ export default function Portfolio() {
         <main id="main-content" className="relative isolate">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             <Hero />
-            <div className="section-divider">
+            <div className="section-divider hero-divider">
               <About />
             </div>
             <div className="section-divider">
