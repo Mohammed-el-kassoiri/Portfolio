@@ -46,7 +46,6 @@ Portfolio/
 │   ├── hero.tsx             # Hero section with typed animation
 │   ├── about.tsx            # Bento-grid about cards
 │   ├── experience.tsx       # Work experience timeline
-│   ├── featured-project-pfe.tsx  # PFE deep-dive section
 │   ├── projects.tsx         # Project cards grid
 │   ├── skills.tsx           # Skill category grid
 │   ├── contact.tsx          # Contact form & links
