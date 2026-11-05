@@ -8,7 +8,6 @@ import { Projects } from "@/components/projects"
 import { Skills } from "@/components/skills"
 import { Contact } from "@/components/contact"
 import { Navigation } from "@/components/navigation"
-import { ScrollProgress } from "@/components/scroll-progress"
 import { PortfolioCommandPalette } from "@/components/command-palette"
 import { CommandPaletteProvider } from "@/components/command-palette-provider"
 
@@ -20,7 +19,6 @@ export default function Portfolio() {
           Skip to main content
         </a>
 
-        <ScrollProgress />
         <Navigation />
         <PortfolioCommandPalette />
 

@@ -70,11 +70,11 @@ export function Navigation() {
       setScrolled(window.scrollY > 50)
 
       const sections = NAV_IDS.map((id) => document.getElementById(id))
-      const scrollPosition = window.scrollY + 200
+      const activeLine = window.scrollY + 96
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i]
-        if (section && section.offsetTop <= scrollPosition) {
+        if (section && section.offsetTop <= activeLine) {
           setActiveSection(NAV_IDS[i])
           break
         }
@@ -82,7 +82,13 @@ export function Navigation() {
     }
 
     window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    window.addEventListener("resize", handleScroll)
+    handleScroll()
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("resize", handleScroll)
+    }
     // NAV_IDS is a module-level constant; setState setters from useState are stable
   }, [])
 
@@ -123,12 +129,10 @@ export function Navigation() {
                 {item.label}
                 {activeSection === item.id && (
                   <motion.div
-                    layoutId="activeSection"
-                    className={cn(
-                      "absolute bottom-0 left-0 right-0 h-0.5",
-                      "bg-blue-500",
-                    )}
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full bg-blue-500"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 0.2 }}
                   />
                 )}
               </a>
