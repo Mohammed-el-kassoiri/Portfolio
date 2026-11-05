@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import {
   Animated,
   Easing,
@@ -25,8 +25,8 @@ export function PortfolioScreen() {
   const { width } = useWindowDimensions()
   const compact = width < 960
   const scrollRef = useRef<ScrollView | null>(null)
-  const sectionOffsets = useRef<Record<string, number>>({})
-  const fadeAnim = useRef(new Animated.Value(0)).current
+  const [sectionOffsets] = useState<Record<string, number>>(() => ({}))
+  const [fadeAnim] = useState(() => new Animated.Value(0))
 
   useEffect(() => {
     Animated.timing(fadeAnim, {
@@ -40,11 +40,11 @@ export function PortfolioScreen() {
   const onSectionLayout =
     (id: string) =>
     ({ nativeEvent }: LayoutChangeEvent) => {
-      sectionOffsets.current[id] = nativeEvent.layout.y
+      sectionOffsets[id] = nativeEvent.layout.y
     }
 
   const handleNavigate = (id: string) => {
-    const y = sectionOffsets.current[id]
+    const y = sectionOffsets[id]
     if (scrollRef.current && typeof y === "number") {
       scrollRef.current.scrollTo({ y: Math.max(0, y - 12), animated: true })
     }
