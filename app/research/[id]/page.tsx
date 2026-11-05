@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: paper.abstract.slice(0, 200) + "…",
       publishedTime: paper.date,
       authors: [paper.authors],
-      siteName: "Mohammed El Kassoiri | Data Scientist | Machine Learning Engineer",
+      siteName: "Mohammed El Kassoiri | AI Architect & Data Scientist",
     },
     twitter: {
       card: "summary_large_image",

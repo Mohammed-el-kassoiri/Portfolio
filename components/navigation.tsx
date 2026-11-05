@@ -6,6 +6,7 @@ import { Menu } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 import { cn } from "@/lib/utils"
 import { useMounted } from "@/hooks/use-mounted"
+import { useCommandPalette } from "@/components/command-palette-provider"
 import {
   Sheet,
   SheetClose,
@@ -54,6 +55,7 @@ export function Navigation() {
   const [openMobileMenu, setOpenMobileMenu] = useState(false)
   const mounted = useMounted()
   const { language, toggleLanguage } = useLanguage()
+  const { openPalette } = useCommandPalette()
 
   const t = navLabels[language]
 
@@ -180,6 +182,17 @@ export function Navigation() {
                 </div>
               </SheetContent>
             </Sheet>
+            <button
+              onClick={openPalette}
+              className={cn(
+                "hidden lg:inline-flex px-2.5 py-1.5 text-[11px] font-semibold rounded-lg border transition-all",
+                "border-slate-600 text-slate-300 hover:bg-slate-800/50",
+              )}
+              aria-label="Open command palette"
+            >
+              Cmd/Ctrl+K
+            </button>
+
             {/* EN / FR language toggle */}
             {mounted && (
               <motion.button
