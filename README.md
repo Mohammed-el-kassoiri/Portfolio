@@ -1,4 +1,4 @@
-# Mohammed El Kassoiri — AI Architect & Data Scientist
+# Mohammed El Kassoiri — Data Scientist & Machine Learning Engineer
 
 > **Personal portfolio** built with Next.js 15, TypeScript, Tailwind CSS v4, and Framer Motion.  
 > Live at **[mohammedelkassoiri.app](https://www.mohammedelkassoiri.app)**
@@ -7,7 +7,7 @@
 
 ## About
 
-I'm an AI Architect and Data Scientist from Morocco specialising in Machine Learning, Deep Learning, Computer Vision, and NLP. I'm currently completing my engineering degree at **ENSIASD** (Data Science, Big Data & AI) and open to full-time roles where cutting-edge AI meets real-world impact.
+I'm a Data Scientist and Machine Learning Engineer from Morocco specialising in Machine Learning, Deep Learning, Computer Vision, and NLP. I'm currently completing my engineering degree at **ENSIASD** (Data Science, Big Data & AI) and open to roles where thoughtful engineering meets real-world impact.
 
 ---
 
@@ -29,7 +29,6 @@ I'm an AI Architect and Data Scientist from Morocco specialising in Machine Lear
 - **Smooth scroll-reveal** — sections animate in as you scroll using `react-intersection-observer` + Framer Motion.
 - **Interactive micro-animations** — hover effects on cards, buttons, and links; parallax orb in the hero section.
 - **Typed hero** — role titles cycle with `react-type-animation`.
-- **Research detail pages** — dynamic routes under `/research/[id]` for academic publications.
 - **SEO-ready** — full Open Graph, Twitter card, JSON-LD structured data, and sitemap.
 
 ---
@@ -42,7 +41,6 @@ Portfolio/
 │   ├── globals.css          # CSS variables + cyber theme tokens
 │   ├── layout.tsx           # Root layout, metadata, ThemeProvider
 │   ├── page.tsx             # Main portfolio page (all sections)
-│   └── research/[id]/       # Dynamic research detail route
 ├── components/
 │   ├── navigation.tsx       # Sticky nav + theme toggle (dark/cyber/light)
 │   ├── hero.tsx             # Hero section with typed animation
@@ -50,13 +48,12 @@ Portfolio/
 │   ├── experience.tsx       # Work experience timeline
 │   ├── featured-project-pfe.tsx  # PFE deep-dive section
 │   ├── projects.tsx         # Project cards grid
-│   ├── research.tsx         # Research publications
 │   ├── skills.tsx           # Skill category grid
 │   ├── contact.tsx          # Contact form & links
 │   ├── theme-provider.tsx   # next-themes wrapper
 │   └── ui/                  # shadcn/ui primitives
 ├── hooks/                   # Custom React hooks
-├── lib/                     # Utilities & data (research-data.ts)
+├── lib/                     # Utilities and shared data
 └── public/                  # Static assets (CV PDF, icons, figures)
 │       ├── logo.png             # Primary logo (source for favicon)
 ```

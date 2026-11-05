@@ -12,8 +12,8 @@ const translations = {
   en: {
     sectionTitle: "About Me",
     name: "Mohammed El Kassoiri",
-    role: "Junior Data Scientist & AI Engineer",
-    bio1: "Junior Data Scientist & AI Engineer specializing in Machine Learning, Deep Learning, and Computer Vision. Currently developing an AI system for automatic agricultural parcelization.",
+    role: "Data Scientist & Machine Learning Engineer",
+    bio1: "Data Scientist and Machine Learning Engineer specializing in applied ML, deep learning, computer vision, and NLP. I enjoy taking a model from a clear problem statement to a useful, maintainable product.",
     location: "Location:",
     locationVal: "Morocco 🇲🇦",
     pfeBadgeTitle: "Featured Project (PFE)",
@@ -22,7 +22,7 @@ const translations = {
       "Automatic Agricultural Parcelization — Deep Learning system for automatic field delineation from satellite imagery using multi-task segmentation and edge detection.",
     missionTitle: "Mission",
     missionText:
-      "AI & Data Engineer ready for the industry — seeking full-time roles in AI, Data Science, or Software Engineering where cutting-edge ML skills meet real-world impact. Ready to contribute to meaningful projects that shape the future.",
+      "I care about the full path from data quality and evaluation to deployment. My goal is to build systems that are measurable, explainable, and genuinely useful to the people who rely on them.",
   },
   fr: {
     sectionTitle: "À propos",

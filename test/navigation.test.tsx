@@ -73,9 +73,8 @@ describe("Navigation", () => {
     addSection("about", 400)
     addSection("experience", 800)
     addSection("projects", 1200)
-    addSection("research", 1600)
-    addSection("skills", 2000)
-    addSection("contact", 2400)
+    addSection("skills", 1600)
+    addSection("contact", 2000)
   })
 
   it("renders navigation landmark and updates active section from scroll position", async () => {

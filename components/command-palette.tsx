@@ -11,13 +11,15 @@ import {
   CommandList,
   CommandShortcut,
 } from "@/components/ui/command"
-import { FileText, Mail, Rocket, UserRound } from "lucide-react"
+import { FileText, Mail, Rocket, UserRound, Briefcase, Wrench } from "lucide-react"
 import { useCommandPalette } from "@/components/command-palette-provider"
 
 const commands = [
   { label: "Go to Hero", id: "hero", icon: Rocket, shortcut: "H" },
   { label: "Go to About", id: "about", icon: UserRound, shortcut: "A" },
   { label: "Go to Projects", id: "projects", icon: Rocket, shortcut: "P" },
+  { label: "Go to Experience", id: "experience", icon: Briefcase, shortcut: "E" },
+  { label: "Go to Skills", id: "skills", icon: Wrench, shortcut: "S" },
   { label: "Go to Contact", id: "contact", icon: Mail, shortcut: "C" },
   { label: "Open Resume", id: "resume", icon: FileText, shortcut: "R" },
 ]

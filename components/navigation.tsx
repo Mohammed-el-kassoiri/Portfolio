@@ -23,7 +23,6 @@ const NAV_IDS = [
   "about",
   "experience",
   "projects",
-  "research",
   "skills",
   "contact",
 ] as const
@@ -34,7 +33,6 @@ const navLabels = {
     about: "About",
     experience: "Experience",
     projects: "Projects",
-    research: "Research",
     skills: "Skills",
     contact: "Contact",
   },
@@ -43,7 +41,6 @@ const navLabels = {
     about: "À propos",
     experience: "Expérience",
     projects: "Projets",
-    research: "Recherche",
     skills: "Compétences",
     contact: "Contact",
   },
@@ -64,7 +61,6 @@ export function Navigation() {
     { id: "about", label: t.about },
     { id: "experience", label: t.experience },
     { id: "projects", label: t.projects },
-    { id: "research", label: t.research },
     { id: "skills", label: t.skills },
     { id: "contact", label: t.contact },
   ]
