@@ -70,19 +70,44 @@ export function Navigation() {
       setScrolled(window.scrollY > 50)
 
       const sections = NAV_IDS.map((id) => document.getElementById(id))
-      const scrollPosition = window.scrollY + 200
+      const activeLine = 96
+      let candidateIndex = 0
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i]
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(NAV_IDS[i])
-          break
+      sections.forEach((section, index) => {
+        if (!section) return
+
+        const bounds = section.getBoundingClientRect()
+        const top =
+          bounds.top === 0 && bounds.bottom === 0
+            ? section.offsetTop - window.scrollY
+            : bounds.top
+
+        if (top <= activeLine) {
+          candidateIndex = index
         }
+      })
+
+      const visibleSection = sections.findIndex((section) => {
+        if (!section) return false
+        const bounds = section.getBoundingClientRect()
+        return bounds.top <= activeLine && bounds.bottom > activeLine
+      })
+
+      if (visibleSection >= 0) {
+        candidateIndex = visibleSection
       }
+
+      setActiveSection(NAV_IDS[candidateIndex])
     }
 
     window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    window.addEventListener("resize", handleScroll)
+    handleScroll()
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("resize", handleScroll)
+    }
     // NAV_IDS is a module-level constant; setState setters from useState are stable
   }, [])
 
