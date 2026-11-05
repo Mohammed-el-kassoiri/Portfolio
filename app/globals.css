@@ -316,10 +316,6 @@
     position: relative;
   }
 
-  .hero-divider .section-container {
-    padding-top: clamp(2.75rem, 5vw, 4.5rem);
-  }
-
   .section-divider::before {
     content: "";
     position: absolute;
