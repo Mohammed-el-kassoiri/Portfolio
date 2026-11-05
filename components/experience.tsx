@@ -16,7 +16,7 @@ const experienceData = {
         "Pôle Digital de l'Agriculture, de la Forêt et Observatoire de la Sécheresse",
       period: "Feb 2026 – Jun 2026",
       type: "pfe",
-      badge: "Final Year Project (PFE) · In Progress",
+      badge: "Completed · Final Year Project (PFE)",
       description:
         "Development of a Deep Learning-based AI system for automatic agricultural parcelization from satellite imagery, integrating a multi-task model combining semantic segmentation and edge detection.",
       highlights: [
@@ -61,7 +61,7 @@ const experienceData = {
         "Pôle Digital de l'Agriculture, de la Forêt et Observatoire de la Sécheresse",
       period: "Fév 2026 – Juin 2026",
       type: "pfe",
-      badge: "Projet de Fin d'Études (PFE) · En cours",
+      badge: "Terminé · Projet de Fin d'Études (PFE)",
       description:
         "Développement d'un système d'intelligence artificielle basé sur le Deep Learning pour la parcellisation automatique des parcelles agricoles à partir d'images satellites, intégrant un modèle multi-tâches combinant la segmentation sémantique et la détection des contours.",
       highlights: [

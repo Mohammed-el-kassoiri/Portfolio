@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { useTheme } from "next-themes"
-import { Target, Briefcase, Code2 } from "lucide-react"
+import { Briefcase, Code2 } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 import { useMounted } from "@/hooks/use-mounted"
 import { SectionHeader } from "@/components/section-header"
@@ -12,29 +12,21 @@ const translations = {
   en: {
     sectionTitle: "About Me",
     name: "Mohammed El Kassoiri",
-    role: "Junior Data Scientist & AI Engineer",
-    bio1: "Junior Data Scientist & AI Engineer specializing in Machine Learning, Deep Learning, and Computer Vision. Currently developing an AI system for automatic agricultural parcelization.",
+    role: "Data Scientist & Machine Learning Engineer",
+    bio1: "Data Scientist and Machine Learning Engineer specializing in applied ML, deep learning, computer vision, and NLP. I enjoy taking a model from a clear problem statement to a useful, maintainable product.",
     location: "Location:",
     locationVal: "Morocco 🇲🇦",
-    pfeBadgeTitle: "Featured Project (PFE)",
-    pfeBadgeStatus: "In Progress",
-    pfeDesc:
-      "Automatic Agricultural Parcelization — Deep Learning system for automatic field delineation from satellite imagery using multi-task segmentation and edge detection.",
     missionTitle: "Mission",
     missionText:
-      "AI & Data Engineer ready for the industry — seeking full-time roles in AI, Data Science, or Software Engineering where cutting-edge ML skills meet real-world impact. Ready to contribute to meaningful projects that shape the future.",
+      "I care about the full path from data quality and evaluation to deployment. My goal is to build systems that are measurable, explainable, and genuinely useful to the people who rely on them.",
   },
   fr: {
     sectionTitle: "À propos",
     name: "Mohammed El Kassoiri",
     role: "Data Scientist & Ingénieur IA",
-    bio1: "Data Scientist & Ingénieur IA spécialisé en Machine Learning, Deep Learning et Computer Vision. Actuellement en train de développer un système IA pour la parcellisation automatique des terres agricoles.",
+    bio1: "Data Scientist & Ingénieur IA spécialisé en Machine Learning, Deep Learning et Computer Vision. J'ai récemment développé un système IA pour la parcellisation automatique des terres agricoles.",
     location: "Localisation :",
     locationVal: "Maroc 🇲🇦",
-    pfeBadgeTitle: "Projet de Fin d'Études (PFE)",
-    pfeBadgeStatus: "En cours",
-    pfeDesc:
-      "Parcellisation Automatique des Parcelles Agricoles — Système Deep Learning pour la délimitation automatique des parcelles depuis des images satellites, combinant segmentation sémantique et détection de contours.",
     missionTitle: "Mission",
     missionText:
       "Ingénieur IA & Data prêt pour l'industrie — à la recherche d'un poste en IA, Data Science ou Ingénierie Logicielle, pour mettre en œuvre des compétences ML de pointe au service de projets à fort impact réel.",
@@ -96,7 +88,7 @@ export function About() {
             <motion.div
               variants={cardVariant}
               whileHover={{ scale: 1.01 }}
-              className={`lg:col-span-2 lg:row-span-2 ${cardBase} p-8`}
+              className={`lg:col-span-2 ${cardBase} p-8`}
             >
               <div className="flex items-start gap-4 mb-6">
                 <div
@@ -144,37 +136,11 @@ me.say_hi()`}</pre>
               </div>
             </motion.div>
 
-            {/* PFE Focus Card */}
-            <motion.div
-              variants={cardVariant}
-              whileHover={{ scale: 1.02 }}
-              className={cardBase}
-            >
-              <div
-                className={`w-12 h-12 ${iconBg} rounded-xl flex items-center justify-center mb-4`}
-              >
-                <Target className={`w-6 h-6 ${iconColor}`} />
-              </div>
-              <div className="flex items-center gap-2 mb-3 flex-wrap">
-                <h3 className={`text-lg font-semibold ${titleColor}`}>
-                  {t.pfeBadgeTitle}
-                </h3>
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 text-xs font-semibold whitespace-nowrap">
-                  <span className="relative flex h-1.5 w-1.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-purple-500" />
-                  </span>
-                  {t.pfeBadgeStatus}
-                </span>
-              </div>
-              <p className={`text-sm leading-relaxed ${textColor}`}>{t.pfeDesc}</p>
-            </motion.div>
-
-            {/* Mission Card — wide */}
+            {/* Mission Card */}
             <motion.div
               variants={cardVariant}
               whileHover={{ scale: 1.01 }}
-              className={`lg:col-span-2 backdrop-blur-sm rounded-2xl p-6 transition-all duration-300 border ${
+              className={`lg:col-span-1 backdrop-blur-sm rounded-2xl p-6 transition-all duration-300 border ${
                 isCyber
                   ? "bg-gradient-to-br from-red-700/10 to-red-900/5 border-red-700/30 hover:border-red-600/50"
                   : "bg-gradient-to-br from-blue-600/10 to-cyan-400/5 border-blue-500/30 hover:border-blue-500/50"

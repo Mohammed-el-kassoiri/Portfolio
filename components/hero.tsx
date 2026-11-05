@@ -1,45 +1,33 @@
 "use client"
 
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion"
-import { TypeAnimation } from "react-type-animation"
-import { Github, Linkedin, Mail, Download, ArrowDown } from "lucide-react"
-import { useMemo } from "react"
-import { HeroThreeScene } from "@/components/hero-three-scene"
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Download,
+  ArrowDown,
+  MapPin,
+  Sparkles,
+} from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
-
-const roles: Record<"en" | "fr", (string | number)[]> = {
-  en: [
-    "Junior Data Scientist & AI Engineer Building Intelligent Systems",
-    2200,
-    "Machine Learning • Deep Learning • Computer Vision • NLP",
-    2200,
-  ],
-  fr: [
-    "Ingénieur IA & Data Scientist créant des systèmes intelligents",
-    2200,
-    "Machine Learning • Deep Learning • Vision par ordinateur • NLP",
-    2200,
-  ],
-}
 
 const translations = {
   en: {
-    availability: "Available now · Real-time status online",
+    availability: "Data Scientist · Machine Learning Engineer",
     description:
-      "I design and deploy intelligent AI products with strong engineering discipline, polished UX, and measurable business outcomes.",
+      "I turn complex data into reliable products — from satellite-image segmentation to multilingual NLP systems and production-ready APIs.",
     resume: "Resume",
     contact: "Contact",
   },
   fr: {
-    availability: "Disponible maintenant · Statut en ligne en temps réel",
+    availability: "Data Scientist · Machine Learning Engineer",
     description:
-      "Je conçois et déploie des produits d’IA intelligents avec une forte rigueur d’ingénierie, une UX soignée et des résultats métier mesurables.",
+      "Je transforme des données complexes en produits fiables — de la segmentation d’images satellites aux systèmes NLP multilingues.",
     resume: "CV",
     contact: "Contact",
   },
 }
-
-const stack = ["Python", "PyTorch", "TensorFlow", "FastAPI", "Next.js", "TypeScript"]
 
 export function Hero() {
   const mouseX = useMotionValue(50)
@@ -48,17 +36,6 @@ export function Hero() {
   const t = translations[language]
 
   const spotlight = useMotionTemplate`radial-gradient(520px circle at ${mouseX}% ${mouseY}%, rgba(56,189,248,0.14), transparent 60%)`
-
-  const floatingIcons = useMemo(
-    () =>
-      stack.map((tech, i) => ({
-        tech,
-        left: `${14 + ((i * 13) % 70)}%`,
-        top: `${10 + ((i * 11) % 60)}%`,
-        delay: i * 0.1,
-      })),
-    [],
-  )
 
   return (
     <section
@@ -76,25 +53,8 @@ export function Hero() {
         style={{ background: spotlight }}
       />
 
-      {floatingIcons.map((item) => (
-        <motion.span
-          key={item.tech}
-          className="pointer-events-none absolute hidden rounded-full border border-cyan-400/30 bg-slate-900/70 px-3 py-1 text-[11px] font-semibold text-cyan-200/80 md:inline-flex"
-          style={{ left: item.left, top: item.top }}
-          animate={{ y: [0, -8, 0] }}
-          transition={{
-            repeat: Infinity,
-            duration: 4.5,
-            delay: item.delay,
-            ease: "easeInOut",
-          }}
-        >
-          {item.tech}
-        </motion.span>
-      ))}
-
       <div className="container mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="space-y-7 premium-surface animated-border p-6 md:p-8">
+        <div className="space-y-7 p-2 md:p-8">
           <motion.span
             initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -113,14 +73,14 @@ export function Hero() {
             MOHAMMED EL KASSOIRI
           </motion.h1>
 
-          <motion.div
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="min-h-14 text-lg font-semibold text-cyan-300 md:text-2xl"
+            className="max-w-2xl text-xl font-medium leading-relaxed text-cyan-300 md:text-2xl"
           >
-            <TypeAnimation sequence={roles[language]} speed={57} repeat={Infinity} />
-          </motion.div>
+            Data science for decisions that matter.
+          </motion.p>
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -177,9 +137,41 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="relative rounded-3xl border border-slate-700/60 bg-slate-900/35 p-3 shadow-[0_24px_65px_rgba(15,23,42,0.45)] backdrop-blur-md"
+          className="relative overflow-hidden rounded-3xl border border-slate-700/60 bg-slate-900/60 p-7 shadow-[0_24px_65px_rgba(15,23,42,0.45)] backdrop-blur-md md:p-9"
         >
-          <HeroThreeScene />
+          <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-cyan-400/15 blur-3xl" />
+          <div className="relative space-y-8">
+            <div className="flex items-center justify-between border-b border-slate-700/70 pb-5">
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-slate-500">
+                Profile / 01
+              </span>
+              <Sparkles className="h-5 w-5 text-amber-300" />
+            </div>
+            <div>
+              <p className="mb-3 text-sm text-slate-400">Currently focused on</p>
+              <p className="text-2xl font-semibold leading-tight text-white">
+                Building useful ML systems from messy, real-world data.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                "Python + PyTorch",
+                "Computer Vision",
+                "NLP + RAG",
+                "FastAPI + SQL",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-xl border border-slate-700/70 bg-slate-800/50 px-3 py-3 text-sm text-slate-300"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center gap-2 text-sm text-slate-400">
+              <MapPin className="h-4 w-4 text-cyan-300" /> Morocco · working globally
+            </div>
+          </div>
         </motion.div>
       </div>
 

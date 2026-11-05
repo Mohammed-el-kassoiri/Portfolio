@@ -1,9 +1,9 @@
 export const portfolioProfile = {
   name: "Mohammed El Kassoiri",
-  title: "AI Architect & Data Scientist",
+  title: "Data Scientist & Machine Learning Engineer",
   specialization: "Machine Learning, Deep Learning, Computer Vision, and NLP",
   location: "Morocco",
-  status: "Available for full-time AI and Data Science opportunities",
+  status: "Open to data science and machine learning opportunities",
   internship:
     "Data Science & Machine Learning Intern at XAI Morocco (Aug 2025 – Oct 2025)",
   technologies: [
@@ -18,12 +18,6 @@ export const portfolioProfile = {
     "React",
     "Next.js",
     "TypeScript",
-  ],
-  researchInterests: [
-    "Agricultural AI",
-    "Semantic Segmentation",
-    "Satellite Image Analysis",
-    "Multilingual NLP",
   ],
   projects: [
     "Automatic Agricultural Parcelization",

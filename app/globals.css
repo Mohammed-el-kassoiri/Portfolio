@@ -169,6 +169,10 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    background:
+      radial-gradient(circle at 8% 0%, rgb(30 64 175 / 0.18), transparent 34rem),
+      radial-gradient(circle at 92% 18%, rgb(14 116 144 / 0.12), transparent 28rem),
+      rgb(var(--background));
     font-family:
       var(--font-body),
       Inter,
@@ -185,6 +189,11 @@
     transition:
       background-color 0.3s ease,
       color 0.3s ease;
+  }
+
+  ::selection {
+    background: rgb(34 211 238 / 0.24);
+    color: rgb(240 249 255);
   }
 
   html {
